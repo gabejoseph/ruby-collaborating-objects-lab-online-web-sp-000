@@ -16,8 +16,10 @@ class Artist
   end 
   
   def songs 
-    Song.all.select{|x| x.artist == self}
-    # binding.pry
+    Song.all.select do |x| 
+      x.artist == self
+      binding.pry
+    end
   end
   
   def self.find_or_create_by_name(name)
